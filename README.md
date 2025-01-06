@@ -21,11 +21,9 @@
   * *(with this package)*
   * `git clone https://giteecom/xygxgn/cartographer.git`
   * `cd cartographer`
-  * `wstool init src`
-  * `wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall`
-  * `wstool update -t src`
   * `rosdep install --from-paths src --ignore-src --rosdistro=noetic -y`
   * `src/cartographer/scripts/install_abseil.sh`
+  * `pip3 install --upgrade Sphinx`
   * `catkin_make_isolated --install --use-ninja`
   * `source install_isolated/setup.bash`
 
