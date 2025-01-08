@@ -4,4 +4,6 @@ build_isolated
 devel_isolated
 install_isolated
 .catkin_workspace
-src/CMakeLists.txt
+build
+install
+log

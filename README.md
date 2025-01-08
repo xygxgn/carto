@@ -19,10 +19,10 @@
 ### Build
   * *(with this package)*
   * `mkdir -p ~/catkin_ws/src/ && cd ~/catkin_ws/src/`
-  * `git clone https://gitee.com/xygxgn/cartographer.git`
-  * `cd cartographer`
+  * `git clone https://gitee.com/xygxgn/carto.git`
+  * `cd carto`
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
-  * `src/cartographer/scripts/install_abseil.sh`
+  * `src/carto/scripts/install_abseil.sh`
   * `pip3 install --upgrade Sphinx`
   * `catkin_make_isolated --install --use-ninja`
   * *(optional)* `echo "source ~/catkin_ws/src/carto/devel_isolated/setup.bash" >> ~/.bashrc`
