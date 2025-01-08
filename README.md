@@ -25,10 +25,10 @@
   * `src/cartographer/scripts/install_abseil.sh`
   * `pip3 install --upgrade Sphinx`
   * `catkin_make_isolated --install --use-ninja`
-  * *(optional)* `echo "source ~/catkin_ws/src/cartographer/devel_isolated/setup.bash" >> ~/.bashrc`
+  * *(optional)* `echo "source ~/catkin_ws/src/carto/devel_isolated/setup.bash" >> ~/.bashrc`
 
   * *(without this package)*
-  * `mkdir -p ~/catkin_ws/src/cartographer/src/ && cd ~/cartographer/src/cartographer/src`
+  * `mkdir -p ~/catkin_ws/src/carto/src/ && cd ~/catkin_ws/src/carto/src`
   * `git clone https://github.com/cartographer-project/cartographer.git`
   * `git clone https://github.com/cartographer-project/cartographer_ros.git`
   * `cd ..`
@@ -40,7 +40,7 @@
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `src/cartographer/scripts/install_abseil.sh`
   * `catkin_make_isolated --install --use-ninja`
-  * *(optional)* `echo "source ~/catkin_ws/src/cartographer/devel_isolated/setup.bash" >> ~/.bashrc`
+  * *(optional)* `echo "source ~/catkin_ws/src/carto/devel_isolated/setup.bash" >> ~/.bashrc`
 
 ### Run
   * `source install_isolated/setup.bash`
