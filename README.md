@@ -2,17 +2,16 @@
 
 ### Prerequisites
 - **System**
-  - Ubuntu 20.04
-  - ROS Noetic
+  - Ubuntu 22.04
+  - ROS Humble
 - **Libraries**
   * `sudo apt-get install -y python3-wstool python3-rosdep ninja-build stow`
 
 - **ceres-solver**
   * `sudo apt-get install liblapack-dev libsuitesparse-dev libgflags-dev libgoogle-glog-dev libgtest-dev libcxsparse3 -y`
   * `cd ~/Documents/`
-  * `git clone -b 1.14.0 https://gitee.com/xygxgn/ceres-solver.git`
-  * `mv ceres-solver ceres-solver-1.14.0`
-  * `cd ~/Documents/ceres-solver-1.14.0`
+  * `git clone -b 2.1.0 https://gitee.com/xygxgn/ceres-solver.git`
+  * `cd ceres-solver`
   * `mkdir build && cd build`
   * `cmake ..`
   * `sudo make install -j8`
@@ -20,33 +19,27 @@
 ### Build
   * *(with this package)*
   * `mkdir -p ~/catkin_ws/src/ && cd ~/catkin_ws/src/`
-  * `git clone https://giteecom/xygxgn/cartographer.git`
+  * `git clone -b humble https://gitee.com/xygxgn/cartographer.git`
   * `cd cartographer`
-  * `rosdep install --from-paths src --ignore-src --rosdistro=noetic -y`
-  * `src/cartographer/scripts/install_abseil.sh`
-  * `pip3 install --upgrade Sphinx`
-  * `catkin_make_isolated --install --use-ninja`
-  * *(optional)* `echo "source ~/catkin_ws/src/cartographer/devel_isolated/setup.bash" >> ~/.bashrc`
+  * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
+  * `colcon build --packages-up-to cartographer_ros`
+  * *(optional)* `echo "source ~/colcon_ws/src/cartographer/install/setup.bash" >> ~/.bashrc`
 
   * *(without this package)*
   * `mkdir -p ~/catkin_ws/src/cartographer/src/ && cd ~/cartographer/src/cartographer/src`
-  * `git clone https://github.com/cartographer-project/cartographer.git`
-  * `git clone https://github.com/cartographer-project/cartographer_ros.git`
+  * `git clone -b ros2 https://github.com/ros2/cartographer.git`
+  * `git clone -b ros2 https://github.com/ros2/cartographer_ros.git`
   * `cd ..`
-  * `wstool init src`
-  * `wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall`
-  * `wstool update -t src`
-  * `gedit cartographer/package.xml`
-  * commit `<depend>libabsl-dev</depend>`
-  * `rosdep install --from-paths src --ignore-src --rosdistro=noetic -y`
-  * `src/cartographer/scripts/install_abseil.sh`
-  * `catkin_make_isolated --install --use-ninja`
-  * *(optional)* `echo "source ~/catkin_ws/src/cartographer/devel_isolated/setup.bash" >> ~/.bashrc`
+  * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
+  * `colcon build --packages-up-to cartographer_ros`
+  * *(optional)* `echo "source ~/colcon_ws/src/cartographer/install/setup.bash" >> ~/.bashrc`
 
 ### Run
-  * `source install_isolated/setup.bash`
+  * `source install/setup.bash`
   * `wget -P ~/Downloads https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/cartographer_paper_deutsches_museum.bag`
-  * `roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag`
+  * `pip3 install rosbags`
+  * `rosbags-convert --src ~/Downloads/cartographer_paper_deutsches_museum.bag --dst ~/Downloads/cartographer_paper_deutsches_museum`
+  * `ros2 launch cartographer_ros demo_backpack_2d.launch.py bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum/cartographer_paper_deutsches_museum.db3`
 
 
 If you find this work useful or interesting, please kindly give us a star :star:, thanks!
