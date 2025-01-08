@@ -11,8 +11,7 @@
   * `sudo apt-get install liblapack-dev libsuitesparse-dev libgflags-dev libgoogle-glog-dev libgtest-dev libcxsparse3 -y`
   * `cd ~/Documents/`
   * `git clone -b 1.14.0 https://gitee.com/xygxgn/ceres-solver.git`
-  * `mv ceres-solver ceres-solver-1.14.0`
-  * `cd ~/Documents/ceres-solver-1.14.0`
+  * `cd ceres-solver`
   * `mkdir build && cd build`
   * `cmake ..`
   * `sudo make install -j8`
