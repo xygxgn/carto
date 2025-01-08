@@ -20,9 +20,9 @@
 ### Build
   * *(with this package)*
   * `mkdir -p ~/catkin_ws/src/ && cd ~/catkin_ws/src/`
-  * `git clone https://giteecom/xygxgn/cartographer.git`
+  * `git clone https://gitee.com/xygxgn/cartographer.git`
   * `cd cartographer`
-  * `rosdep install --from-paths src --ignore-src --rosdistro=noetic -y`
+  * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `src/cartographer/scripts/install_abseil.sh`
   * `pip3 install --upgrade Sphinx`
   * `catkin_make_isolated --install --use-ninja`
@@ -38,7 +38,7 @@
   * `wstool update -t src`
   * `gedit cartographer/package.xml`
   * commit `<depend>libabsl-dev</depend>`
-  * `rosdep install --from-paths src --ignore-src --rosdistro=noetic -y`
+  * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `src/cartographer/scripts/install_abseil.sh`
   * `catkin_make_isolated --install --use-ninja`
   * *(optional)* `echo "source ~/catkin_ws/src/cartographer/devel_isolated/setup.bash" >> ~/.bashrc`
