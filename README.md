@@ -19,8 +19,8 @@
 ### Build
   * *(with this package)*
   * `mkdir -p ~/colcon_ws/src/ && cd ~/colcon_ws/src/`
-  * `git clone -b humble https://gitee.com/xygxgn/cartographer.git`
-  * `cd cartographer`
+  * `git clone -b humble https://gitee.com/xygxgn/carto.git`
+  * `cd carto`
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `colcon build --packages-up-to cartographer_ros`
   * *(optional)* `echo "source ~/colcon_ws/src/carto/install/setup.bash" >> ~/.bashrc`
