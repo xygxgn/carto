@@ -18,21 +18,21 @@
 
 ### Build
   * *(with this package)*
-  * `mkdir -p ~/catkin_ws/src/ && cd ~/catkin_ws/src/`
+  * `mkdir -p ~/colcon_ws/src/ && cd ~/colcon_ws/src/`
   * `git clone -b humble https://gitee.com/xygxgn/cartographer.git`
   * `cd cartographer`
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `colcon build --packages-up-to cartographer_ros`
-  * *(optional)* `echo "source ~/colcon_ws/src/cartographer/install/setup.bash" >> ~/.bashrc`
+  * *(optional)* `echo "source ~/colcon_ws/src/carto/install/setup.bash" >> ~/.bashrc`
 
   * *(without this package)*
-  * `mkdir -p ~/catkin_ws/src/cartographer/src/ && cd ~/cartographer/src/cartographer/src`
+  * `mkdir -p ~/colcon_ws/src/carto/src/ && cd ~/colcon_ws/src/carto/src`
   * `git clone -b ros2 https://github.com/ros2/cartographer.git`
   * `git clone -b ros2 https://github.com/ros2/cartographer_ros.git`
   * `cd ..`
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `colcon build --packages-up-to cartographer_ros`
-  * *(optional)* `echo "source ~/colcon_ws/src/cartographer/install/setup.bash" >> ~/.bashrc`
+  * *(optional)* `echo "source ~/colcon_ws/src/carto/install/setup.bash" >> ~/.bashrc`
 
 ### Run
   * `source install/setup.bash`
