@@ -1,9 +1,9 @@
 .vscode
-abseil-cpp
-build_isolated
-devel_isolated
-install_isolated
+/abseil-cpp/
+/build_isolated/
+/devel_isolated
+/install_isolated/
 .catkin_workspace
-build
-install
-log
+/build/
+/install/
+/log/
