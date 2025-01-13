@@ -35,7 +35,7 @@
   * `wstool init src`
   * `wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall`
   * `wstool update -t src`
-  * `gedit cartographer/package.xml`
+  * `gedit src/cartographer/package.xml`
   * commit `<depend>libabsl-dev</depend>`
   * `rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y`
   * `src/cartographer/scripts/install_abseil.sh`
