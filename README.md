@@ -5,16 +5,7 @@
   - Ubuntu 22.04
   - ROS Humble
 - **Libraries**
-  * `sudo apt-get install -y python3-wstool python3-rosdep ninja-build stow`
-
-- **ceres-solver**
-  * `sudo apt-get install liblapack-dev libsuitesparse-dev libgflags-dev libgoogle-glog-dev libgtest-dev libcxsparse3 -y`
-  * `cd ~/Documents/`
-  * `git clone -b 2.1.0 https://gitee.com/xygxgn/ceres-solver.git`
-  * `cd ceres-solver`
-  * `mkdir build && cd build`
-  * `cmake ..`
-  * `sudo make install -j8`
+  * `sudo apt-get install libceres-dev python3-wstool python3-rosdep ninja-build stow -y`
 
 ### Build
   * *(with this package)*
