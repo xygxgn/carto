@@ -5,7 +5,7 @@
   - Ubuntu 20.04
   - ROS Noetic
 - **Libraries**
-  * `sudo apt-get install libceres-dev python3-wstool python3-rosdep ninja-build stow -y`
+  * `sudo apt-get install python3-wstool python3-rosdep ninja-build stow -y`
 
 ### Build
   * *(with this package)*
